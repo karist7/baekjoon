@@ -1,25 +1,18 @@
-import java.io.*;
-import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
-        String input = br.readLine();
 
-        StringTokenizer st = new StringTokenizer(input);
-        int a = Integer.parseInt(st.nextToken());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int a = Integer.parseInt(br.readLine());
+        int b = Integer.parseInt(br.readLine());
 
-        String input2 = br.readLine();
-        StringTokenizer st2 = new StringTokenizer(input2);
-        int b = Integer.parseInt(st2.nextToken());
-
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        bw.write(a*(b%10) +"\n");
-        bw.write(a*((b/10)%10) +"\n");
-        bw.write(a*((b/100)%10) +"\n");
-        bw.write(a*b+"\n");
-        bw.flush();
-        bw.close();
-
+        System.out.println(a * (b % 10));
+        System.out.println(a * ((b % 100) / 10));
+        System.out.println(a * (b / 100));
+        System.out.println(a * b);
     }
 }
