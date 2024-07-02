@@ -8,7 +8,8 @@ public class Main {
 
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         for(int i=1;i<10;i++){
-            bw.write(n + " * " + i + " = " +(n*i) +"\n");
+            String formattedString = String.format("%d * %d = %d\n",n,i,n*i);
+            bw.write(formattedString);
         }
         bw.flush();
         bw.close();
