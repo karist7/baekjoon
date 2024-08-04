@@ -1,6 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.StringTokenizer;
+
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -12,12 +11,14 @@ public class Main {
 
         int L = Integer.parseInt(br.readLine());
         String str = br.readLine();
-        int total=0;
+        long total=0;
+        long power = 1;
         for(int i=0;i<L;i++){
-            total+= (int) (((str.charAt(i)-'a'+1)*(Math.pow(r,i)))%M);
+            total = (total + (str.charAt(i)-'a'+1)*power);
+            power = (power * r) % M;
         }
 
-        bw.write(total+"\n");
+        bw.write(total%M+"\n");
         bw.close();
     }
 
