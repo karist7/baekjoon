@@ -1,0 +1,21 @@
+import java.io.*;
+import java.util.Arrays;
+import java.util.Comparator;
+
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+        int n = Integer.parseInt(br.readLine());
+        int[] arr = new int[n];
+        for(int i=0;i<n;i++){
+            arr[i] = Integer.parseInt(br.readLine());
+        }
+        arr = Arrays.stream(arr).sorted().toArray();
+        for(int data : arr){
+            bw.write(data+"\n");
+        }
+        bw.close();
+    }
+}
