@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class Main {
@@ -8,52 +7,25 @@ public class Main {
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         int n = Integer.parseInt(br.readLine());
         LinkedList<Integer> list = new LinkedList<>();
-        ArrayList<Character> arr = new ArrayList<>();
+        StringBuilder sb = new StringBuilder();
         int k = 0;
         boolean flag = false;
         for(int i=0;i<n;i++){
             int data = Integer.parseInt(br.readLine());
-            if(list.size()==0){
-                if(k>data){
-                    flag=true;
-                    break;
+            if(data>k){
+                for(int j=k+1;j<=data;j++){
+                    list.add(j);
+                    sb.append("+\n");
                 }
-                for(int j=k;j<data;j++){
-                    k++;
-                    list.add(k);
-                    arr.add('+');
-                }
+                k=data;
+            }
+            if(list.get(list.size()-1)==data){
                 list.removeLast();
-                arr.add('-');
+                sb.append("-\n");
             }
-            else{
-                if(list.peekLast() != null &&data<=list.peekLast()){
-                    while(!list.isEmpty() &&data<=list.peekLast()){
-
-                        list.removeLast();
-                        arr.add('-');
-                    }
-                }
-                else if(list.peekLast() != null && data>list.peekLast()) {
-                    if(k>data){
-                        flag=true;
-                        break;
-                    }
-
-                    while (data > list.peekLast()) {
-                        k++;
-                        list.add(k);
-                        arr.add('+');
-                    }
-                    list.removeLast();
-                    arr.add('-');
-                }
-            }
-
         }
-        if(!flag){
-            for(char ch : arr)
-                bw.write(ch+"\n");
+        if(list.isEmpty()){
+            bw.write(sb+"\n");
         }
         else
             bw.write("NO"+"\n");
