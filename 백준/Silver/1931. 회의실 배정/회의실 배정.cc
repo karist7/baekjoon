@@ -27,13 +27,10 @@ int main() {
     }
     int count = 1;
     sort(vec.begin(), vec.end(),customSort);
-    int minTime = vec.front().first;
-    int maxTime = vec.front().second;
+    int end = vec.front().second;
     for (auto it = vec.begin()+1;it != vec.end();it++) {
-        if (maxTime <= it->first) {
-                minTime = it->first;
-                maxTime = it->second;
-                
+        if (end <= it->first) {                
+                end = it->second;
                 count++;
         }
     }
