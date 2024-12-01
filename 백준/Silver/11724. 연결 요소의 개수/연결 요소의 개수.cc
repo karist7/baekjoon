@@ -7,20 +7,19 @@ static vector<vector<int>> graph;
 static vector<bool> visited;
 static int cnt;
 void dfs(int start) {
-    visited[start] = true;
+    
     stack<int> st;
-    for (int i = 0;i < graph[start].size();i++) {
-        st.push(graph[start][i]);
-    }
+    visited[start] = true;
+    st.push(start);
     while (!st.empty()) {
         int v = st.top();
         st.pop();
-        if (!visited[v])
-            visited[v] = true;
-        for (int j = 0;j < graph[v].size();j++) {          
-            if (!visited[graph[v][j]]) {
-                visited[graph[v][j]] = true;
-                st.push(graph[v][j]);
+
+        for (int i = 0; i < graph[v].size(); i++) {
+            int next = graph[v][i];
+            if (!visited[next]) {
+                visited[next] = true;
+                st.push(next);
             }
         }
         
