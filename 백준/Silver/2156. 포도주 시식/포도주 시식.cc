@@ -32,13 +32,8 @@ int main() {
         step2 = arr[i] + dp[i - 3] + arr[i - 1];
         dp[i] = max(max(step1, step2),dp[i - 1] );
     }
-    int max = 0;
-    for (int i = 1; i <= n;i++) {
-        
-        if (max < dp[i])
-            max = dp[i];
-    }
-    cout << max << '\n';
+
+    cout << dp[n] << '\n';
     
 
     return 0;
