@@ -10,11 +10,11 @@ int main() {
     int n, k;
     cin >> n >> k;
 
-    // 2D 벡터 생성
+    
     vector<vector<int>> arr = vector<vector<int>>(n + 1);
 
     for (int i = 0; i <= n; i++) {
-        arr[i] = vector<int>(i + 1, 1); // 각 행에 맞는 크기의 벡터 생성 및 초기화
+        arr[i] = vector<int>(i + 1, 1); 
         for (int j = 1; j < i; j++) {
             arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
         }
