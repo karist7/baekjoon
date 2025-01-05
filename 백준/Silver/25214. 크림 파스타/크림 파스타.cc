@@ -29,9 +29,8 @@ int main(void)
             result=d;
         }
         answer[i] = result;
-    }
-    for(int i=0;i<n;i++){
         cout<<answer[i]<<" ";
     }
+
     return 0;
 }
