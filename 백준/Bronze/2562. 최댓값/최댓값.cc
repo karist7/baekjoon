@@ -13,7 +13,7 @@ int main() {
 	int maxVal = INT32_MIN;
 	int idx = 0;
 	int a;
-	vector<int> arr(9);
+	
 	for (int i = 0; i < 9; i++) {
 		cin >> a;
 		if (maxVal < a) {
