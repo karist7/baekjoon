@@ -15,23 +15,22 @@ int main() {
 	int a = 0;
 	int sol = 0;
 	
-	
 	if (!str.empty() && str.at(0)==' ' ) {
 		str.erase(0, 1);
 	}
 	if (!str.empty() && str.at(str.length() - 1) == ' ' ) {
 		str.erase(str.length() - 1, str.length());
 	}
-	while (str.find(" ", a) != string::npos) {
-		a = str.find(" ", a) + 1;
-		sol++;
+	for (int i = 0; i < str.length(); i++) {
+		if (str[i] == ' ') {
+			sol++;
+		}
 	}
 	if (str.length() == 0) {
 		cout << sol;
 	}
 	else {
 
-		cout << sol+1;
+		cout << sol + 1;
 	}
-	
 }
