@@ -4,19 +4,24 @@
 #include <string>
 #include <stack>
 #include <queue>
-#include <unordered_set>
+
 using namespace std;
 
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	unordered_set<int> s;
+	int arr[43] = { 0 };
 	int n;
 	for (int i = 0; i < 10; i++) {
 		cin >> n;
 		n %= 42;
-		s.insert(n);
+		arr[n]++;
 	}
-	
-	cout << s.size();
+	int k = 0;
+	for (int i = 0; i < 43; i++) {
+		if (arr[i] != 0) {
+			k++;
+		}
+	}
+	cout << k;
 }
