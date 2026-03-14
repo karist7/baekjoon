@@ -14,26 +14,15 @@ int main() {
 	cin >> s;
 	int arr[26] = { 0 };
 	for (int i = 0; i < 26; i++) {
-		arr[i] = 100;
+		arr[i] = -1;
 	}
-	int n = 0;
-	for (int i = 0; i < s.length(); i++) {	
-		if (arr[s[i] - 97] == 100) {
-			arr[s[i] - 97] = n;
+	
+	for (int i = 0; i < s.length(); i++) {
+		if (arr[s[i] - 'a'] == -1) {
+			arr[s[i] - 'a'] = i;
 		}
-		n++;
-		
 	}
 	for (int i = 0; i < 26; i++) {
-		if (arr[i] == 100) {
-			cout << -1 << " ";
-		}
-		else {
-
-			cout << arr[i] << " ";
-		}
+		cout << arr[i] << " ";
 	}
-	
-	
-	
 }
