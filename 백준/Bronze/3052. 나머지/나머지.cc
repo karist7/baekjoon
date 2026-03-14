@@ -10,7 +10,7 @@ using namespace std;
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(NULL);
-	int arr[43] = { 0 };
+	int arr[42] = { 0 };
 	int n;
 	for (int i = 0; i < 10; i++) {
 		cin >> n;
@@ -18,7 +18,7 @@ int main() {
 		arr[n]++;
 	}
 	int k = 0;
-	for (int i = 0; i < 43; i++) {
+	for (int i = 0; i < 42; i++) {
 		if (arr[i] != 0) {
 			k++;
 		}
