@@ -19,12 +19,9 @@ int main() {
 	int total = 0;
 	while (sol != n) {
 		string s = to_string(m);
-		for (int i = 0; i < s.length() - 2; i++) {
-			if (s.substr(i, 3).compare("666") == 0){
-				sol++;
-				total = m;
-				break;
-			}
+		if (s.find("666") != string::npos){
+			sol++;
+			total = m;
 		}
 		
 		m++;
