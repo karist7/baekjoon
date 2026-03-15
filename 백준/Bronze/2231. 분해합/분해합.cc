@@ -14,7 +14,11 @@ int main() {
 	int n;
 	cin >> n;
 	int total = 0;
-	for (int i = n; i >= 0; i--) {
+	int m = 0;
+	for (int i = n; i > 0; i /= 10) {
+		m += 9;
+	}
+	for (int i = n-m; i <= n; i++) {
 		int k = 0;
 		for (int j = i; j > 0; j /= 10) {
 			k += (j%10);
@@ -23,6 +27,7 @@ int main() {
 		
 		if ((i + k) == n) {
 			total = i;
+			break;
 		}
 	}
 	cout << total;
