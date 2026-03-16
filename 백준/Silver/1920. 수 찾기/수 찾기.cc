@@ -27,22 +27,26 @@ int main() {
 	}
 	sort(vec1.begin(), vec1.end());
 	for (int x : vec2) {
+
+
 		cout << binary_search(0, vec1.size()-1, x) << "\n";
 	}
 
 }
 int binary_search(int start, int end, int sol) {
-	int mid = (start + end) / 2;
 	
-	if (start > end) return 0;
-	if (sol > vec1[mid]) {
-		return binary_search(mid + 1, end, sol);
+	while (start <= end) {
+		int mid = (start + end) / 2;
+		if (sol > vec1[mid]) {
+			start = mid + 1;
+		}
+		else if (sol < vec1[mid]) {
+			end = mid - 1;
+		}
+		else return 1;
 	}
-	else if (sol < vec1[mid]){
-		return binary_search(start, mid - 1, sol);
-	}
-	else{
-		return 1;
-	}
+	return 0;
+
+
 
 }
