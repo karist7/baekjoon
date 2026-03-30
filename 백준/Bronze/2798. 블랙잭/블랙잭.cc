@@ -22,21 +22,14 @@ int main() {
     }
     int maxVal = 0;
     int subVal;
-    bool correct = false;
-    for (int i = 0; i < arr.size() - 2; i++) {
-        for (int j = i+1; j < arr.size() - 1; j++) {
-            for (int l = j+1; l < arr.size(); l++) {
-                subVal = arr[i] + arr[j] + arr[l];
-                if (maxVal == m) {
-                    correct = true;
-                    break;
-                }
-                if (maxVal < subVal && subVal <= m) maxVal = subVal;
 
+    for (int i = 0; i < arr.size() - 2; i++) {
+        for (int j = i + 1; j < arr.size() - 1; j++) {
+            for (int l = j + 1; l < arr.size(); l++) {
+                subVal = arr[i] + arr[j] + arr[l];
+                if (maxVal < subVal && subVal <= m) maxVal = subVal;
             }
-            if (correct) break;
         }
-        if (correct) break;
     }
     cout << maxVal;
     
